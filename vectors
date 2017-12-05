@@ -1,0 +1,64 @@
+package com.company; // this program helps to define if couple of vectors are equal
+class Vector{
+    int X;
+    int Y;
+    int X1;
+    int Y1;
+    int A;
+    double Ax;
+    double Ay;
+
+    public Vector(int x, int y, int x1, int y1) { // constructor
+        X = x;
+        Y = y;
+        X1 = x1;
+        Y1 = y1;
+    }
+
+    public String toString() { // cozy way to see the vector
+
+        return "[" + X + "," + Y + "-> " + X1 + "," + Y1 + "]";
+    }
+
+    public double length() { // length of each vector
+        Ax = X1 - X;
+        Ay = Y1 - Y;
+        return Math.hypot(Ax, Ay);
+    }
+
+    public int compareTo(Vector a, Vector b) { // compare 2 vectors
+        if (a.length() == (b.length())) {
+            A = 0;
+            return A;
+        } else if (a.length() > b.length()) {
+            A = 1;
+            return A;
+        } else if (a.length() < b.length()) {
+            A = -1;
+            return A;
+        }
+        return A;
+
+    }
+
+    public boolean equals(Vector a, Vector b){ // are those vectors equal?
+        if(a.length() == b.length()){
+            return true;
+        } else
+            return false;
+    }
+}
+    public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+       Vector a = new Vector(2,0,6,3);
+        Vector b = new Vector(2,0,6,3);
+        System.out.println(a.compareTo(a,b));
+        System.out.println(a.toString());
+        System.out.println(b.toString());
+        System.out.println(a.equals(a, b));
+        System.out.println(a.length());
+        System.out.println(b.length());
+    }
+}
